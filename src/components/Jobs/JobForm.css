@@ -1,0 +1,94 @@
+.job-form-container {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-form-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.job-form-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.job-form-header p {
+  opacity: 0.9;
+  margin: 0;
+  color: white;
+}
+
+.job-form {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .job-form-container {
+    margin: 0;
+    border-radius: 0;
+    height: 100vh;
+  }
+  
+  .job-form-header {
+    padding: 1.5rem;
+  }
+  
+  .job-form-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .job-form {
+    padding: 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-form-header {
+    padding: 1rem;
+  }
+  
+  .job-form-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .job-form {
+    padding: 1rem;
+  }
+}

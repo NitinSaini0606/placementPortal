@@ -1,0 +1,228 @@
+.analytics-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.analytics-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 1.5rem;
+}
+
+.analytics-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.analytics-content {
+  padding: 1.5rem;
+}
+
+.stats-table {
+  margin-bottom: 1.5rem;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 0.5rem;
+}
+
+.header-cell {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.department-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.application-bar {
+  position: relative;
+  background-color: var(--bg-tertiary);
+  border-radius: 9999px;
+  height: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.bar-fill {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+  min-width: 2px;
+}
+
+.bar-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  z-index: 1;
+}
+
+.approved-count {
+  color: var(--success-color);
+  font-weight: 600;
+}
+
+.rate-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rate-badge.high {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.rate-badge.medium {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.rate-badge.low {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.analytics-summary {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.summary-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+@media (max-width: 1024px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  
+  .table-cell:nth-child(4) {
+    display: none;
+  }
+  
+  .header-cell:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-content {
+    padding: 1rem;
+  }
+  
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .table-row {
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border: none;
+  }
+  
+  .table-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .table-cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+  
+  .header-cell {
+    display: none;
+  }
+  
+  .analytics-summary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-header {
+    padding: 1rem;
+  }
+  
+  .analytics-header h3 {
+    font-size: 1.125rem;
+  }
+  
+  .application-bar {
+    height: 1.25rem;
+  }
+  
+  .bar-text {
+    font-size: 0.6875rem;
+  }
+}
